@@ -1,0 +1,60 @@
+body {
+  font-family: 'CeraRoundPro';
+  background-color: #001E3A;
+  /* колір шрифта */
+  /* Вибір кольорів, один з багатьох https://gka.github.io/palettes/ */
+  color: #efefef;
+  /* На темномі тлі треба робити більше інтервал між літерами (хак від дизайнерки Текстів) */
+  letter-spacing: 0.02em;
+  /* em — розмір тексту в браузері, часто 16px, але люди можуть собі налаштовувати дрібніше чи крупніше. Так ми враховуємо налаштування користувачів, а не грубо пишемо у пікселях */
+  margin: 0 auto;
+  padding: 0;
+  width: 70%;
+}
+
+@font-face {
+  font-family: CeraRoundPro;
+  src: url("../fonts/TypeMates - CeraRoundPro-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: CeraRoundPro;
+  font-weight: bold;
+  src: url("../fonts/TypeMates - CeraRoundPro-Bold.otf") format("opentype");
+}
+
+span {
+    font-weight: 400;
+}
+input[type=checkbox] {
+  display: none;
+}
+
+.content {
+  overflow: hidden;
+}
+
+
+.container img.bot {
+  margin-right: 15px;
+  float: left;
+  max-height: 50%;
+  max-width: 50%;
+}
+
+.text-left {
+  font-size: 20px;
+  text-align: justify
+}
+
+.container img.chart {
+  max-height: 80%;
+  max-width: 80%;
+  transition: transform ease;
+  cursor: zoom-in;
+}
+
+input[type=checkbox]:checked ~ label > img.chart {
+  transform: scale(1.5);
+  cursor: zoom-out;
+}
