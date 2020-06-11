@@ -1,19 +1,21 @@
 body {
   font-family: 'CeraRoundPro';
   background-color: #001E3A;
-  /* колір шрифта */
-  /* Вибір кольорів, один з багатьох https://gka.github.io/palettes/ */
+  /* пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ */
+  /* пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ https://gka.github.io/palettes/ */
   color: #efefef;
-  /* На темномі тлі треба робити більше інтервал між літерами (хак від дизайнерки Текстів) */
+  /* пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ (пїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ) */
   letter-spacing: 0.02em;
-  /* em — розмір тексту в браузері, часто 16px, але люди можуть собі налаштовувати дрібніше чи крупніше. Так ми враховуємо налаштування користувачів, а не грубо пишемо у пікселях */
-  margin: 0 auto;
+  line-height: 1.65;
+  /* em пїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅ 16px, пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ. пїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
+  /* margin: 0 auto;
   padding: 0;
-  width: 70%;
+  width: 70%; */
 }
 
 @font-face {
   font-family: CeraRoundPro;
+  font-weight: 400;
   src: url("../fonts/TypeMates - CeraRoundPro-Regular.otf") format("opentype");
 }
 
@@ -23,35 +25,107 @@ body {
   src: url("../fonts/TypeMates - CeraRoundPro-Bold.otf") format("opentype");
 }
 
-span {
-    font-weight: 400;
+/* Styles here cause figure has to be 100% */
+section, footer, header {
+  margin: 2em 1.5em 3em 1.5em;
+  /* for mobile and all */
 }
+
+figure {
+  margin: 3em 0 5em 0;
+}
+
+img.bot {
+  margin-right: 1em 5vw;
+  max-width: 90vw;
+}
+
+@media screen and (min-width: 800px) {
+  section, footer, header, figure {
+    margin: 2em 15% 3em 15%;
+    /* for tabletes and netwooks */
+  }
+  p {
+    font-size: 1.1em;
+    text-align: justify;
+  }
+
+  section.content {
+    display: grid;
+    grid-template-columns: 1.25fr 1fr;
+    grid-gap: 0 2em;
+  }
+
+  section.content h3 {
+    grid-column: 1 / -1;
+  }
+
+  p.fullrow {
+    grid-column: 1 / -1;
+  }
+
+  img.bot {
+    margin: 0;
+    max-width: 100%;
+  }
+}
+
+@media screen and (min-width: 1199px) {
+  section, footer, header, figure {
+    max-width: 1000px;
+    margin: 2em 17.5% 3em 17.5%;
+    /* for large desktops */
+  }
+
+  p {
+    font-size: 1.2em;
+  }
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+h2 {
+  font-weight: 400;
+}
+
+@media screen and (max-width: 800px) {
+  h2 {
+    font-size: 1.2rem;
+    text-align: left;
+  }
+}
+
+section.content h3 {
+  font-size: 1.5em;
+}
+
+/* .content {
+  overflow: hidden;
+} */
+
+figure {
+  padding: 0;
+  text-align: center;
+}
+
+figure img.chart {
+  max-height: 85vh;
+  max-width: calc(100vw - 2em);
+  transition: transform 0.5s ease;
+  cursor: zoom-in;
+  box-shadow: -0.1em -0.1em 0.75em 0.15em #adbbc6;
+}
+
+@media (max-width: 500px) {
+  figure img.chart {
+    transform-origin: center left;
+  }
+}
+
 input[type=checkbox] {
   display: none;
-}
-
-.content {
-  overflow: hidden;
-}
-
-
-.container img.bot {
-  margin-right: 15px;
-  float: left;
-  max-height: 50%;
-  max-width: 50%;
-}
-
-.text-left {
-  font-size: 20px;
-  text-align: justify
-}
-
-.container img.chart {
-  max-height: 80%;
-  max-width: 80%;
-  transition: transform ease;
-  cursor: zoom-in;
 }
 
 input[type=checkbox]:checked ~ label > img.chart {
